@@ -37,3 +37,35 @@ nav ul li {
 .navbar-nav > li > a:hover{
     border-top: 0.1rem solid var(--primary-white);
 }
+
+.header-wraper{
+    position: relative;
+    background: url("header.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 89vh;
+}
+
+.main-info{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:"Roboto Condesed", sans-serif;
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.main-info h1{
+    color: var(--primary-white);
+    text-transform: uppercase;
+}
+
+.typed-text{
+    font-size: 2rem;
+    color:var(--primary-white);
+}
