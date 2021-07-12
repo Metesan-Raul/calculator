@@ -15,7 +15,6 @@ function App() {
     <>
 <Navbar></Navbar>
 <Header></Header>
-<MessengerCustomerChat pageId="107222084970997" appId="1244219119364963"/>
 <Chat></Chat>
     </>
   );
