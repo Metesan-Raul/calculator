@@ -69,3 +69,12 @@ nav ul li {
     font-size: 2rem;
     color:var(--primary-white);
 }
+
+.calculator{
+    background-color: white;
+    width: 80%;
+    border: 10px solid black;
+    padding: 30px;
+    margin: auto;
+}
+
