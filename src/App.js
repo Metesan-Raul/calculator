@@ -3,21 +3,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Chat from './components/Chat';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 import SumaGauss from './components/SumaGauss';
-
-
-
-
+import AdSenseMonetization from './components/AdSense';
+import Paypal from './components/Paypal';
+import Analytics from './components/Analytics';
 
 function App() {
-  return (
-    <>
+return (
+<>
 <Navbar></Navbar>
 <Header></Header>
 <Chat></Chat>
-    </>
-  );
-}
+<Paypal></Paypal>
+<Analytics></Analytics>
+</>
+)}
 
 export default App;
