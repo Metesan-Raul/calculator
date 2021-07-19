@@ -1,0 +1,62 @@
+<script src="https://unpkg.com/mathjs@9.4.2/lib/browser/math.js"></script>
+<script type="text/javascript">
+    function convertor() {
+        try{
+        var cantitate1 = document.getElementById("cantitate1").value;
+        var udm1 = document.getElementById("udm1").value;
+        var udm2 = document.getElementById("udm2").value;
+        var convertor=(cantitate1 + " " + udm1 + " to " + udm2).toString();
+        document.getElementById("outputconversie").innerHTML ="Rezultatul conversiei este " + math.evaluate(convertor);
+        }
+        catch(err) {
+            alert('Nu ai completat bine!');
+        }
+    }
+    function operatieconvertor() {
+        try{
+        var operatieunitati = document.getElementById("operatieunitati").value;
+        var semnunitati;
+        if(operatieunitati == "adun") semnunitati="+"
+        if(operatieunitati == "scad") semnunitati="-"
+        if(operatieunitati == "înmulțesc") semnunitati="*"
+        if(operatieunitati == "împart") semnunitati="/"
+        var cantitate11 = document.getElementById("cantitate11").value;
+        var udm11 = document.getElementById("udm11").value;
+        var udm22 = document.getElementById("udm22").value;
+        var sumacon=(cantitate11 + " " + udm11 + " " + semnunitati + " " + cantitate11 + " " + udm22).toString();
+        document.getElementById("outputoperatieconversie").innerHTML ="Rezultatul calculului este " + math.evaluate(sumacon);
+        }
+        catch(err) {
+            alert('Nu ai completat bine!');
+        }
+    }
+</script>
+<div style="color: white">
+    <h2>Unități de măsură</h2>
+    <p style="display: inline-block;">Doresc să convertesc </p>
+    <input id="cantitate1" size="5" placeholder="120">
+    <input id="udm1" size="5" placeholder="km/h">
+    <p style="display: inline-block;"> în </p>
+    <input id="udm2" size="5" placeholder="m/s"><br><br>
+    <button onclick="convertor()">Convertește</button><br><br>
+
+    <b id="outputconversie"></b>
+    <p style="display: inline-block;">Doresc să </p>
+      <select id="operatieunitati" name="operatie">
+    <option value="adun">adun</option>
+    <option value="scad">scad</option>
+    <option value="înmulțesc">înmulțesc</option>
+    <option value="împart">împart</option>
+  </select>
+    <input id="cantitate11" size="5" placeholder="25">
+    <input id="udm11" size="5" placeholder="inch">
+    <p style="display: inline-block;"> cu </p>
+    <input id="cantitate22" size="5" placeholder="35">
+    <input id="udm22" size="5" placeholder="cm"><br><br>
+    <button onclick="operatieconvertor()">Calculează</button><br><br>
+    <b id="outputoperatieconversie"></b>
+    
+
+
+</form>
+</div>

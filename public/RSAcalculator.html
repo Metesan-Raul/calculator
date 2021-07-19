@@ -1,0 +1,65 @@
+<script type="text/javascript">
+const suntCoprime = (num1, num2) => {
+   const smaller = num1 > num2 ? num1 : num2;
+   for(let ind = 2; ind < smaller; ind++){
+      const condition1 = num1 % ind === 0;
+      const condition2 = num2 % ind === 0;
+      if(condition1 && condition2){
+         return false;
+      };
+   };
+   return true;
+};
+
+const cmmdc = (num1, num2) => {
+   let a = Math.abs(num1);
+   let b = Math.abs(num2);
+   while (a && b && a !== b) {
+      if(a > b){
+         [a, b] = [a - b, b];
+      }else{
+         [a, b] = [a, b - a];
+      };
+   };
+   return a || b;
+};
+
+function calculatorRSA() {
+        
+        var P = document.getElementById("P").value;
+        var Q = document.getElementById("Q").value;
+        var i;
+        var chei;
+        E=[];
+        D=[];
+        N=P*Q;
+        L=(P-1)*(Q-1);
+        document.getElementById('modul').innerHTML = "N = P*Q = " + N + "<br><br>";
+        document.getElementById('lungime').innerHTML = "L = (P-1)*(Q-1) = " + L + "<br><br>";
+        
+        for(i=1;i<L;i++)
+        {
+            if(cmmdc(i,L) == 1 && suntCoprime(i,N) == 1)
+            {
+                E.push(i);
+            }
+        }
+        document.getElementById('cheiecriptare').innerHTML = "E = " + E + "<br><br>";
+        for(i=1;i<E.length;i++)
+         {
+            D.push(euclid_extins(E[i],L));
+         }
+        document.getElementById('cheiedecriptare').innerHTML = "D = " + D +  "<br><br>";
+    }
+</script>
+<div style="color: white">
+    <h2>Calculator RSA</h2>
+    <p style="display:inline-block"> Introduceți P = </p> <input id="P" size="5"><br>
+    <p style="display:inline-block"> Introduceți Q = </p> <input id="Q" size="5"><br>
+    <button onclick="calculatorRSA()">Calculează</button><br><br><br><br>
+    <b id="modul"></b>
+    <b id="lungime"></b>
+    <b id="cheiecriptare"></b>
+    <b id="cheiedecriptare"></b>
+    <b id="outputRSA"></b>
+</div>

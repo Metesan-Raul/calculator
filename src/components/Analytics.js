@@ -1,14 +1,13 @@
 import ReactGA from 'react-ga';
+import React from 'react'
 
-function Analytics(){
+const Analytics = () => {
     ReactGA.initialize("G-CCRLGGSWKD")
-    ReactGA.pageview("/HomePage")
-    return(<></>);
+    ReactGA.pageview("/HomePage")  
+    return (
+        <div>
+        </div>
+    )
 }
-function Initialize(){
-    Analytics();
-    return(<></>);
-}
-
 
 export default Analytics;

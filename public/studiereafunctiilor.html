@@ -1,0 +1,38 @@
+<script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+<script src="https://unpkg.com/mathjs@9.4.2/lib/browser/math.js"></script>
+
+<div style="color: white">
+
+    <h2>Studierea funcțiilor</h2>
+
+    <form id="form">
+        <label for="functie">Introdu funcția pe care dorești să o studiezi: </label>
+        <input type="text" id="functie" placeholder="sin(e^x)" />
+        <input type="submit" value="Desenează" />
+    </form>
+
+    <div id="plot"></div>
+    <script>
+        function grafic() {
+
+            const functiegrafic = math.compile(document.getElementById('functie').value)
+            const functiegr = {
+                x: valoriX = math.range(-5, 5, 0.1).toArray(),
+                y: valoriY = valoriX.map(function (x) {
+                    return functiegrafic.evaluate({
+                        x: x
+                    })
+                }),
+                type: 'scatter'
+            }
+            Plotly.newPlot('plot', [functiegr])
+
+
+        }
+        document.getElementById('form').onsubmit = function (event) {
+            event.preventDefault()
+            grafic()
+        }
+        grafic()
+    </script>
+</div>

@@ -1,0 +1,70 @@
+<canvas id="harta" width="400" height="400"></canvas>
+<script>
+window.onload=function() {
+	harta=document.getElementById("harta");
+	ctx=harta.getContext("2d");
+	document.addEventListener("keydown",keyPush);
+	setInterval(game,1000/15);
+}
+px=10;
+py=10;
+gs=20;
+tc=20;
+foodX=15;
+foodY=15;
+snakeX=0;
+snakeY=0;
+traseu=[];
+coada = 5;
+function game() {
+	px+=snakeX;
+	py+=snakeY;
+	if(px<0) px= tc-1;
+	if(px>tc-1) px= 0;
+	if(py<0) py= tc-1;
+	if(py>tc-1) py= 0;
+	
+	ctx.fillStyle="black";
+	ctx.fillRect(0,0,harta.width,harta.height);
+
+	ctx.fillStyle="green";
+	for(var i=0;i<traseu.length;i++) {
+		ctx.fillRect(traseu[i].x*gs,traseu[i].y*gs,gs-2,gs-2);
+		if(traseu[i].x==px && traseu[i].y==py) {
+			coada = 5;
+		}
+	}
+	traseu.push({x:px,y:py});
+	while(traseu.length>coada) {
+	traseu.shift();
+	}
+
+	if(foodX==px && foodY==py) {
+		coada++;
+		foodX=Math.floor(Math.random()*tc);
+		foodY=Math.floor(Math.random()*tc);
+	}
+	ctx.fillStyle="white";
+	ctx.fillRect(foodX*gs,foodY*gs,gs-2,gs-2);
+}
+function keyPush(evt) {
+	switch(evt.keyCode) {
+		case 37:
+			snakeX=-1;
+            snakeY=0;
+			break;
+		case 38:
+			snakeX=0;
+            snakeY=-1;
+			break;
+		case 39:
+			snakeX=1;
+            snakeY=0;
+			break;
+		case 40:
+			snakeX=0;
+            snakeY=1;
+			break;
+	}
+}
+</script>

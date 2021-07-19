@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    function sumaGauss() {
+        document.getElementById("outputsumagauss").innerHTML = "";
+        var limita1 = parseInt(document.getElementById("limita1").value);
+        var limita2 = parseInt(document.getElementById("limita2").value);
+        var i;
+        var rezultat = (limita2 * (limita2 + 1) / 2) - ((limita1 - 1) * limita1 / 2);
+        if ((limita2 - limita1) < 1000) {
+            document.getElementById("outputsumagauss").innerHTML += "Vom face adunarea: " + limita1;
+            for (i = limita1 + 1; i <= limita2; i++) {
+                document.getElementById("outputsumagauss").innerHTML += " + " + i;
+            }
+        }
+        document.getElementById("outputsumagauss").innerHTML += "<br>Suma Gauss este " + rezultat;
+
+    }
+
+
+
+</script>
+<div style="color: white">
+    <h2>Sumă Gauss</h2>
+    <p> Introduceți partea de început și de final pentru suma Gauss </p>
+    <input id="limita1" placeholder="Numar pozitiv"><br>
+    <input id="limita2" placeholder="Numar pozitiv"><br>
+    <button onclick="sumaGauss()" id="calculeazasumagauss">Calculează</button><br><br>
+    <b id="outputsumagauss"></b>
+</div>

@@ -1,0 +1,40 @@
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+  messageStyle: "none"
+});
+</script>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'>
+    function pitagora() {
+        var latura1 = parseInt(document.getElementById("latura1").value);
+        document.getElementById("outputlatura1").innerHTML = "Prima catetă este " + latura1;
+        var latura2 = parseInt(document.getElementById("latura2").value);
+        document.getElementById("outputlatura2").innerHTML = "A doua catetă este " + latura2;
+        document.getElementById("teoremapit").innerHTML = "Astfel putem aplica Teorema lui Pitagora " +
+            "$$cateta_1^{2} + cateta_2^{2} = ipotenuza^{2}$$";
+        document.getElementById("teoremapit").innerHTML += "$$" + latura1 + "^{2} + " + latura2 +
+            "^{2} = ipotenuza^{2}$$";
+        document.getElementById("teoremapit").innerHTML += "$$\\sqrt{" + latura1 * latura1 + " + " + latura2 * latura2 +
+            "} = ipotenuza$$";
+        document.getElementById("teoremapit").innerHTML += "Deci " + "$$ipotenuza = " + "\\sqrt{" + ((latura1 *
+            latura1) + (latura2 * latura2)) + "}$$";
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "teoremapit"]);
+        if (latura1 <= 0 || latura2 <= 0) {
+            alert("Ați introdus numere negative!");
+        } else {
+            var latura3 = Math.sqrt(Math.pow(latura1, 2) + Math.pow(latura2, 2))
+            document.getElementById("outputpitagora").innerHTML = "Și obținem ipotenuza aproximativ egală cu " + Number
+                .parseFloat(latura3).toFixed(2);
+        }
+    }
+</script>
+<div style="color:white;">
+    <h2>Calculator Ipotenuză</h2>
+    <p> Introduceți cele 2 laturi pentru a afla ipotenuza </p>
+    <p>Cateta 1 = <input id="latura1" placeholder="Numar pozitiv"></p><br>
+    <p>Cateta 2 = <input id="latura2" placeholder="Numar pozitiv"></p><br><br>
+    <button onclick="pitagora()" id="calculeazapitagora">Calculează</button>
+    <p id="outputlatura1"></p>
+    <p id="outputlatura2"></p>
+    <p id="teoremapit"></p>
+    <b id="outputpitagora"></b>
+<div>

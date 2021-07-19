@@ -1,0 +1,26 @@
+<script src="https://nerdamer.com/js/nerdamer.core.js"></script>
+<script src="https://nerdamer.com/js/Algebra.js"></script>
+<script src="https://nerdamer.com/js/Calculus.js"></script>
+
+<script type="text/javascript">
+    function derivata() {
+        try{
+        var expresieD = document.getElementById("expresieD").value;
+        var functieX = document.getElementById("functieX").value;
+        var derivata = nerdamer.diff(expresieD, functieX);
+        document.getElementById('outputderivata').innerHTML = "Derivata este: f'(x) = " + derivata;
+        }
+        catch(err){
+            alert('Funcția nu este redactată bine!')
+        }
+    }
+</script>
+<div style="color: white">
+    <h2>Calculator Derivate</h2>
+    <p> Introduceți cele expresia și variabila conform căreia doriți să derivați</p>
+    <input id="expresieD" placeholder="2^3*x+sin(3*x)">
+    <p> în funcție de <p><input id="functieX" placeholder="x"></p>
+    </p><br><br>
+    <button onclick="derivata()" id="calculeazaderivata">Derivează</button><br><br>
+    <b id="outputderivata"></b>
+</div>
