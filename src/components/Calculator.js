@@ -24,7 +24,7 @@ const Calculator = () => {
 <section  id='IX-XII'>
     <Iframe
     src="studiereafunctiilor.html"
-    className="iframe"/>
+    className="iframederivata"/>
     <Iframe
     src="derivata.html"
     className="iframe"/>
@@ -33,6 +33,11 @@ const Calculator = () => {
     <Iframe
     src="RSAcalculator.html"
     className="iframe"/>
+</section>
+<section  id='jocuri'>
+    <Iframe
+    src="snake.html"
+    className="iframesnake"/>
 </section>
 </>
     )

@@ -51,8 +51,8 @@ function Paypal() {
          </div>
     
          ) : (
-            <div className="d-flex justify-content-center" style={{padding: "10px"}}>
-            <h1 >Dorești să îmi susții proiectul?</h1>
+            <div className="d-flex justify-content-around">
+            <h3>Dorești să îmi cumperi o cafea?  </h3>
             
             
             <div ref={v => (paypalRef = v)} />

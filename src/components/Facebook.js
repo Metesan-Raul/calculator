@@ -19,11 +19,13 @@ class Facebook extends React.Component {
         if(this.state.isLoggedIn){
                 fbContent = null;
         } else{
+            fbContent = (
             <FacebookLogin
             appId="1244219119364963"
             autoLoad={true}
             fields="name,email,picture"
             callback={this.responseFacebook} />
+            )
         }
     return (
     <div>

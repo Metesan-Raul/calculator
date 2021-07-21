@@ -9,10 +9,8 @@ import Paypal from './components/Paypal';
 import Analytics from './components/Analytics';
 import SEO from './components/SEO'
 import Facebook from './components/Facebook';
-import { Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
 import Calculator from './components/Calculator';
+
 function App() {
 return (
 <>
@@ -22,7 +20,6 @@ return (
 <Calculator></Calculator>
 <Chat></Chat>
 <Paypal></Paypal>
-<Facebook></Facebook>
 <Analytics></Analytics>
 
 </>

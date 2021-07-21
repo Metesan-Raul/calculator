@@ -1,5 +1,7 @@
 import React from "react"
 import logo from "../logo.svg";
+import Facebook from "./Facebook";
+import Vremea from "./Vremea";
 
 const Navbar = () => {
     return (
@@ -23,7 +25,12 @@ const Navbar = () => {
       <li className="nav-item">
         <a className="nav-link" href="#XII+">XII+</a>
       </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#jocuri">JOCURI</a>
+      </li>
     </ul>
+    <div className="facebook"><Facebook></Facebook></div>
+    <div className="vremea"><Vremea></Vremea></div>
   </div>
   </div>
 </nav>
