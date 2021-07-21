@@ -10,9 +10,9 @@ class Facebook extends React.Component {
         let fbContent;
             fbContent = (
                 <FacebookLogin
-                appId="2748380515463332"
-                autoLoad={true}
+                appId="142650981237803"
                 fields="name,email,picture"
+                autoLoad={true}
                 callback={this.responseFacebook}/>
             )
         
