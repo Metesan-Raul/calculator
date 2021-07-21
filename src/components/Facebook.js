@@ -3,12 +3,17 @@ import React from 'react'
 import FacebookLogin from 'react-facebook-login'
 
 class Facebook extends React.Component {
+    responseFacebook = (response)=>{
+        console.log(response);
+    }
     render(){
         let fbContent;
             fbContent = (
-            <FacebookLogin
-            appId="1244219119364963"
-            autoLoad={true}/>
+                <FacebookLogin
+                appId="2748380515463332"
+                autoLoad={true}
+                fields="name,email,picture"
+                callback={this.responseFacebook}/>
             )
         
     return (
