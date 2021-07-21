@@ -9,7 +9,7 @@ export default class Vremea extends Component {
         };
     }
     componentDidMount = () => {
-        axios.get("https://calculatorstiintific.herokuapp.com/TemperaturaBucuresti").then(response => {
+        axios.get("/TemperaturaBucuresti").then(response => {
             this.setState({
                 weather: response.data.temperature
             });
